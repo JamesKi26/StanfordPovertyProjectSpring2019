@@ -37,12 +37,11 @@ export default class LandingPage1 extends Component{
         return (
             <LinearGradient colors = {["#EDDBFF","#8133D4"]} style = {landingStyles.gradientBackground} >
                 <Animated.View style = {{opacity: fadeAnimTitle}}>
-                    <Text style = {landingStyles.title}>Interested in college?</Text>
                     <Text style = {landingStyles.title}>Worried about paying for it?</Text>
                 </Animated.View>
 
                 <Animated.View style = {{opacity: fadeAnimSubTitle}}>
-                    <Text style = {landingStyles.subTitle}>You Can Afford College</Text>
+                    <Text style = {landingStyles.subTitle}>You Can Afford College!</Text>
                     <Text style = {landingStyles.subTitle}>In fact, 85% of college students receive financial aid to pay for college</Text>
                 
                 </Animated.View>

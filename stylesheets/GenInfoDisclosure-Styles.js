@@ -19,6 +19,7 @@ const genInfoDisclosureStyles = StyleSheet.create({
         fontSize: 30,
         color: "#fff",
         margin: 15,
+        marginTop: 40,
     },
     
     subTitle: {

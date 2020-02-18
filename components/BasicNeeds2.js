@@ -14,23 +14,24 @@ export default class BasicNeeds2 extends Component{
             householdNumberArray: [1,2,3,4,5,6,7,8],
             householdArray: ["$2,082", "$2,820", "$3,556", "$4,292", "$5,030", "$5,766", "$6,502", "$7,240"],
             //householdArray: [2082, 2820, 3556, 4292, 5030, 5766, 6502, 7240, 738],
-            householdIncomeAnswer: "",
-            continue: false,
+            householdIncomeAnswer: "yes",
+            // continue: false,
 
         }
     }
     
 
     componentDidMount(){
-        if(this.state.dataMap.get("Enrollment-Response") == "c" || this.state.dataMap.get("Work-Response") == "b"){
-            this.setState({continue: true})
-        }
+        // if(this.state.dataMap.get("Enrollment-Response") == "c" || this.state.dataMap.get("Work-Response") == "b"){
+        //     this.setState({continue: true})
+        // }
     }
 
     renderResults(){
         if(this.state.dataMap.get("Enrollment-Response") == "c" || this.state.dataMap.get("Work-Response") == "b"){
             return(
                 <View>
+                    <Text style = {basicStyles.title}>You may also qualify for help with food in college</Text>
                     <Text style = {basicStyles.subTitle}>
                         Students need to attend college at least part-time and work at least 20 hours per week, or participate in work study programs, to qualify for food assistance. 
                         However, there are exceptions that might apply to you.
@@ -50,6 +51,8 @@ export default class BasicNeeds2 extends Component{
             });
             return(
                 <View style = {basicStyles.gradientBackground}>
+                    <Text style = {basicStyles.title}>You may also qualify for help with food in college</Text>
+                    <Text style = {basicStyles.subTitle}>Here are some more questions that can help us determine how much food assistance you could receive</Text>
                     <View style = {basicStyles.dropMenuContainer}>
                         <Text style = {basicStyles.subTitle}>What will your household size be: </Text>
                         <Picker selectedValue = {this.state.householdNumber}
@@ -58,20 +61,23 @@ export default class BasicNeeds2 extends Component{
                             this.setState({householdNumber: itemValue})}>
                             {householdNumberItem}
                         </Picker>
+                        
                     </View>
                     <Text style = {basicStyles.subTitle}>Do you think your household income will be more than {(this.state.householdArray)[this.state.householdNumber-1]} per month?</Text>
                     <TouchableOpacity onPress = {() => {
                         this.state.dataMap.delete("Household-Income")
-                        this.setState({householdIncomeAnswer: "yes", continue: true})
+                        this.setState({householdIncomeAnswer: "yes"})
                     }}     
-                    style = {basicStyles.optionButtonContainer}>
+                    style = {[this.state.householdIncomeAnswer == "yes" && basicStyles.buttonOptionContainerSelect,
+                    this.state.householdIncomeAnswer != "yes" && basicStyles.optionButtonContainer]}>
                         <Text style = {basicStyles.buttonText}>Yes</Text>
                     </TouchableOpacity>
                     <TouchableOpacity onPress = {() => {
                         this.state.dataMap.delete("Household-Income")
-                        this.setState({householdIncomeAnswer: "no", continue: true})
+                        this.setState({householdIncomeAnswer: "no"})
                     }}     
-                    style = {basicStyles.optionButtonContainer}>
+                    style = {[this.state.householdIncomeAnswer == "no" && basicStyles.buttonOptionContainerSelect,
+                        this.state.householdIncomeAnswer != "no" && basicStyles.optionButtonContainer]}>
                         <Text style = {basicStyles.buttonText}>No</Text>
                     </TouchableOpacity>
                 </View>
@@ -85,15 +91,15 @@ export default class BasicNeeds2 extends Component{
         
         return (
             <LinearGradient colors = {["#EDDBFF","#8133D4"]} style = {basicStyles.gradientBackground} >
-                <Text style = {basicStyles.title}>Basic Needs</Text>
+                
 
                 {this.renderResults()}
 
                 <TouchableOpacity onPress = {() => {
-                    if(this.state.continue == false){
-                        alert("Please select a valid household income answer")
-                    }
-                    else{
+                    // if(this.state.continue == false){
+                    //     alert("Please select a valid household income answer")
+                    // }
+                    // else{
                         if (this.state.dataMap.get("Enrollment-Response") == "c" || this.state.dataMap.get("Work-Response") == "b"){
                             this.state.dataMap.set("Household-Income", this.state.householdIncomeAnswer) 
                             this.props.navigation.navigate("FinalResults", {mapArg: this.state.dataMap}) 
@@ -103,7 +109,7 @@ export default class BasicNeeds2 extends Component{
                             this.state.dataMap.set("Household-Number", this.state.householdNumber) 
                             this.props.navigation.navigate("BasicNeeds3", {mapArg: this.state.dataMap})     
                         }
-                    }                  
+                    // }                  
                 }}     
                     style = {basicStyles.buttonContainer}>
                         <Text style = {basicStyles.buttonText}>Next</Text>

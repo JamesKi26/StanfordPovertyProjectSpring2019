@@ -68,7 +68,7 @@ export default class StateAid1 extends Component{
                 "WY - Wyoming"],
             familySizeArray: ["Two", "Three", "Four", "Five", "Six or more"],
             familySize: 2,
-            stateAidIncomeAnswer: "",
+            stateAidIncomeAnswer: "a",
             incomeMap: [["$43,000", "$92,100"], ["$48,500", "$94,400"], ["$53,900", "$102,500"], ["$60,300", "$109,900"], ["$65,100", "$118,500"]],
 
 
@@ -84,21 +84,30 @@ export default class StateAid1 extends Component{
         return(
             <View style = {stateStyles.buttonOption}>
                 <Text style = {stateStyles.subTitle}>Family Income: </Text>
-                <TouchableOpacity style = {stateStyles.optionButtonContainer}
+                <TouchableOpacity style = {[
+                        this.state.stateAidIncomeAnswer == "a" && stateStyles.buttonOptionContainerSelect,
+                        this.state.stateAidIncomeAnswer != "a" && stateStyles.optionButtonContainer,
+                    ]}
                 onPress = {()=>{
                     this.state.dataMap.delete("State-Income")
                     this.setState({stateAidIncomeAnswer: "a"})
                     }}>
                     <Text style = {stateStyles.buttonText}>{(this.state.incomeMap)[this.state.familySize-2][0]} or less</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style = {stateStyles.optionButtonContainer}
+                <TouchableOpacity style = {[
+                        this.state.stateAidIncomeAnswer == "b" && stateStyles.buttonOptionContainerSelect,
+                        this.state.stateAidIncomeAnswer != "b" && stateStyles.optionButtonContainer,
+                    ]}
                 onPress = {()=>{
                     this.state.dataMap.delete("State-Income")
                     this.setState({stateAidIncomeAnswer: "b"})
                     }}>
                     <Text style = {stateStyles.buttonText}>Between {(this.state.incomeMap)[this.state.familySize-2][0]} and {(this.state.incomeMap)[this.state.familySize-2][1]}</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style = {stateStyles.optionButtonContainer}
+                <TouchableOpacity style = {[
+                        this.state.stateAidIncomeAnswer == "c" && stateStyles.buttonOptionContainerSelect,
+                        this.state.stateAidIncomeAnswer != "c" && stateStyles.optionButtonContainer,
+                    ]}
                 onPress = {()=>{
                     this.state.dataMap.delete("State-Income")
                     this.setState({stateAidIncomeAnswer: "c"})
@@ -121,6 +130,10 @@ export default class StateAid1 extends Component{
         return (
             <LinearGradient colors = {["#EDDBFF","#8133D4"]} style = {stateStyles.gradientBackground} >
                 {/* <Text style = {stateStyles.title}>State Aid</Text> */}
+                <Text style = {stateStyles.title}>State Grants</Text>
+
+                <Text style = {stateStyles.subTitle}>In addition to grants from the federal government, your state’s government also provides money to help you pay for college. 
+                In fact, $1.9 billion is available in California, and the average Cal grant is around $5,700!</Text>
 
                 <View style = {stateStyles.optionContainer}>
                     <View style = {stateStyles.dropMenuContainer}>

@@ -15,8 +15,7 @@ const stateStyles = StyleSheet.create({
     },
 
     optionContainer: {
-        position: "absolute",
-        top: 50,
+
         alignItems: "center",
     },
 
@@ -33,14 +32,14 @@ const stateStyles = StyleSheet.create({
         textAlign: "center",
         fontSize: 30,
         color: "#fff",
-        margin: 15,
+        margin: 5,
     },
     
     subTitle: {
         textAlign: "center",
-        fontSize: 20,
+        fontSize: 15,
         color: "#fff",
-        margin: 10,
+        margin: 5,
     },
 
     resultTitle: {
@@ -76,13 +75,12 @@ const stateStyles = StyleSheet.create({
 
     buttonOption: {
         alignItems: "center",
-        position: "absolute",
-        top: 220,
+
     },
 
     buttonContainer: {
         width: "70%",
-        margin: 50,
+        margin: 30,
         padding: 20,
         borderColor: "#fff",
         borderWidth: 2,
@@ -95,13 +93,25 @@ const stateStyles = StyleSheet.create({
 
     optionButtonContainer: {
         width: 200,
-        margin: 10,
-        padding: 20,
+        margin: 5,
+        padding: 5,
         borderColor: "#fff",
         borderWidth: 2,
         borderRadius: 15,
         justifyContent: "center",
         alignItems: "center",
+    },
+
+    buttonOptionContainerSelect: {
+        width: 200,
+        margin: 5,
+        padding: 5,
+        borderColor: "#fff",
+        borderWidth: 2,
+        borderRadius: 15,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#add8e6",
     },
 
     buttonText: {
@@ -130,6 +140,20 @@ const stateStyles = StyleSheet.create({
         color: "#fff",
         shadowOpacity: 0.5,
     },
+
+    
+    table: {
+        height: 500,
+        borderColor: "#fff",
+        borderWidth: 2,
+        
+    },
+    wrapper: {
+        flexDirection: "row",
+    },
+    tableTitle: {
+        flex: 1,
+    }
 })
 
 export { stateStyles }

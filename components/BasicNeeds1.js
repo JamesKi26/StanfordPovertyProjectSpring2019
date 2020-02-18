@@ -11,8 +11,8 @@ export default class BasicNeeds1 extends Component{
         this.state = {
             dataMap : this.props.navigation.state.params.mapArg,
 
-            enrollmentResponse : "",
-            workResponse : "",
+            enrollmentResponse : "a",
+            workResponse : "a",
 
         }
     }
@@ -21,13 +21,15 @@ export default class BasicNeeds1 extends Component{
     renderQuestions(){
         return(
             <View style = {basicStyles.questionContainer}>
-                <Text style = {basicStyles.subTitle}>What type of enrollment status is most likely for you?</Text>
+                <Text style = {basicStyles.subTitle}>I plan to attend</Text>
                 
                 <View style = {basicStyles.questionMoreInfoContainer}>
                     <TouchableOpacity onPress = {() => {
                         this.state.dataMap.delete("Enrollment-Response")
                         this.setState({enrollmentResponse: "a"})}}     
-                        style = {basicStyles.optionButtonContainer}>
+                        style = {[this.state.enrollmentResponse == "a" && basicStyles.buttonOptionContainerSelect,
+                        this.state.enrollmentResponse != "a" && basicStyles.optionButtonContainer
+                        ]}>
                             <Text style = {basicStyles.buttonText}>Full-Time</Text>
                     </TouchableOpacity>
 
@@ -42,7 +44,9 @@ export default class BasicNeeds1 extends Component{
                     <TouchableOpacity onPress = {() => {
                         this.state.dataMap.delete("Enrollment-Response")
                         this.setState({enrollmentResponse: "b"})}}     
-                        style = {basicStyles.optionButtonContainer}>
+                        style = {[this.state.enrollmentResponse == "b" && basicStyles.buttonOptionContainerSelect,
+                        this.state.enrollmentResponse != "b" && basicStyles.optionButtonContainer
+                        ]}>
                         <Text style = {basicStyles.buttonText}>Half-Time</Text>
                     </TouchableOpacity>
                     <TouchableOpacity onPress = {() => { Alert.alert("Half-Time Definition", "Half-time is determined by each college. It’s usually around 6-8 units or credits per session.", [{text: "OK"}],{cancelable: false}) }}     
@@ -54,24 +58,30 @@ export default class BasicNeeds1 extends Component{
                 <TouchableOpacity onPress = {() => {
                     this.state.dataMap.delete("Enrollment-Response")
                     this.setState({enrollmentResponse: "c"})}}     
-                    style = {basicStyles.optionButtonContainer}>
+                    style = {[this.state.enrollmentResponse == "c" && basicStyles.buttonOptionContainerSelect,
+                    this.state.enrollmentResponse != "c" && basicStyles.optionButtonContainer
+                    ]}>
                     <Text style = {basicStyles.buttonText}>Less than Half-Time</Text>
                 </TouchableOpacity>
 
 
-                <Text style = {basicStyles.subTitle}>How much do think you will work in college?</Text>
+                <Text style = {basicStyles.subTitle}>I plan to work</Text>
                 
                 <TouchableOpacity onPress = {() => {
                     this.state.dataMap.delete("Work-Response")
                     this.setState({workResponse: "a"})}}     
-                    style = {basicStyles.optionButtonContainer}>
+                    style = {[this.state.workResponse == "a" && basicStyles.buttonOptionContainerSelect,
+                    this.state.workResponse != "a" && basicStyles.optionButtonContainer
+                    ]}>
                         <Text style = {basicStyles.buttonText}>At least 20 hours per week</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity onPress = {() => {
                     this.state.dataMap.delete("Work-Response")
                     this.setState({workResponse: "b"})}}     
-                    style = {basicStyles.optionButtonContainer}>
+                    style = {[this.state.workResponse == "b" && basicStyles.buttonOptionContainerSelect,
+                    this.state.workResponse != "b" && basicStyles.optionButtonContainer
+                    ]}>
                     <Text style = {basicStyles.buttonText}>Less than 20 hours per week</Text>
                 </TouchableOpacity>
 
@@ -79,7 +89,9 @@ export default class BasicNeeds1 extends Component{
                     <TouchableOpacity onPress = {() => {
                         this.state.dataMap.delete("Work-Response")
                         this.setState({workResponse: "c"})}}     
-                        style = {basicStyles.optionButtonContainer}>
+                        style = {[this.state.workResponse == "c" && basicStyles.buttonOptionContainerSelect,
+                        this.state.workResponse != "c" && basicStyles.optionButtonContainer
+                        ]}>
                         <Text style = {basicStyles.buttonText}>I plan to participate in work study</Text>
                     </TouchableOpacity>
                     <TouchableOpacity onPress = {() => { Alert.alert("Work Study", "Federal Work-Study provides part-time jobs for students with financial need, allowing them to earn money to help pay education expenses.", [{text: "OK"}],{cancelable: false}) }}     
@@ -95,7 +107,7 @@ export default class BasicNeeds1 extends Component{
        
         return (
             <LinearGradient colors = {["#EDDBFF","#8133D4"]} style = {basicStyles.gradientBackground} >
-                <Text style = {basicStyles.title}>Basic Needs</Text>
+                <Text style = {basicStyles.title}>You may also qualify for help with food in college</Text>
 
                 {this.renderQuestions()}
 

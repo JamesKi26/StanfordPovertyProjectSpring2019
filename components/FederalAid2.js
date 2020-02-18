@@ -16,24 +16,26 @@ export default class FederalAid2 extends Component{
     
     setResultText(){
         
-        if(this.state.dataMap.get("Fed-Income") == "$26,000 or less"){
+        if(this.state.dataMap.get("Fed-Income") == "a"){
             return(
                 <View>
-                    <Text style = {federalStyles.subTitle}>You could be eligible for up to $6,195 through the Pell Grant to pay for college! 
+                    {/* <Text style = {federalStyles.subTitle}>You could be eligible for up to $6,195 through the Pell Grant to pay for college! 
                         Getting the maximum Pell Grant depends on two other things – 
                         1) your family has received a government benefit in the last two years, or 
                         2) your parents/guardians filed a simplified tax form. 
-                    </Text>
+                    </Text> */}
 
+                    <Text style = {federalStyles.subTitle}>You could be eligible for up to $6,195 through the Pell Grant to pay for college!</Text>
+                    
                     <Text style = {federalStyles.linkText} 
                         onPress = {() => Linking.openURL("https://ifap.ed.gov/efcformulaguide/attachments/2021EFCFormulaGuide.pdf")}>
-                        Click here for more details and talk to your family to learn more about your situation.
+                        Everyone's situation is different, but click here for more details
                     </Text>
                 </View>
             )
             
         }
-        else if(this.state.dataMap.get("Fed-Income") == "$26,001 to $65,000"){
+        else if(this.state.dataMap.get("Fed-Income") == "b"){
             return(
                 <Text style = {federalStyles.subTitle}>More than half of all students in this range get federal grants. 
                     That means you may be eligible! Students in this range get an average of $3,000 through the Pell Grant to pay for college.
@@ -62,7 +64,7 @@ export default class FederalAid2 extends Component{
                     //console.log(this.state.dataMap.get("Fed-Income"))
                     }} 
                     style = {federalStyles.buttonContainer}>
-                        <Text style = {federalStyles.buttonText}>Move to State Aid</Text>
+                        <Text style = {federalStyles.buttonText}>Click here to see what else you can get</Text>
                 </TouchableOpacity>
             </LinearGradient>
         );

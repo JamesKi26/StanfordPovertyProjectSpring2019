@@ -47,7 +47,7 @@ const basicStyles = StyleSheet.create({
 
     optionButtonContainer: {
         width: 200,
-        margin: 10,
+        margin: 5,
         padding: 5,
         borderColor: "#fff",
         borderWidth: 2,
@@ -56,6 +56,17 @@ const basicStyles = StyleSheet.create({
         alignItems: "center",
     },
 
+    buttonOptionContainerSelect: {
+        width: 200,
+        margin: 5,
+        padding: 5,
+        borderColor: "#fff",
+        borderWidth: 2,
+        borderRadius: 15,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#add8e6",
+    },
 
     buttonContainer: {
         width: "70%",

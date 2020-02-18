@@ -18,16 +18,15 @@ export default class GenInfoDisclosure extends Component{
             <LinearGradient colors = {["#EDDBFF","#8133D4"]} style = {genInfoDisclosureStyles.gradientBackground}>
                 <Text style = {genInfoDisclosureStyles.title}>General Information and Disclosure</Text>
                 <KeyboardAvoidingView style={genInfoDisclosureStyles.keyboard} behavior="padding" enabled>
-                    <Text style = {genInfoDisclosureStyles.subTitle}>The government provides 30 billion in grants to students every year. 
-                    We need to ask you some questions to help you determine how much money could be available for you. 
-                    We will not share your personal information. 
-                    Enter your phone number and email below and we will send you a summary of all the money you could get to pay for college. 
-                    We can also remind about important deadlines for financial aid and other benefits.</Text>
+                    <Text style = {genInfoDisclosureStyles.subTitle}>There are $246 billion in federal aid available for students every year. 
+                    And 85% of college students receive some type of financial aid.
+                    Enter your phone and email and we will send you a summary of all the money you could get for college. 
+                    We will NOT share your personal info.</Text>
                     
                     <TextInput
                     style={genInfoDisclosureStyles.numericInput}
                     editable={true}
-                    placeholder="Email"
+                    placeholder="Enter Email"
                     selectionColor="#fff"
                     keyboardType="email-address"
                     onChangeText = {(text) => this.setState({emailAddress: text})}/>
@@ -35,7 +34,7 @@ export default class GenInfoDisclosure extends Component{
                     <TextInput
                     style={genInfoDisclosureStyles.numericInput}
                     editable={true}
-                    placeholder="Phone Number"
+                    placeholder="Enter Phone Number"
                     selectionColor="#fff"
                     keyboardType="phone-pad"
                     maxLength={12}
@@ -46,7 +45,7 @@ export default class GenInfoDisclosure extends Component{
                     //console.log("email address: ", this.state.emailAddress, "\nphone number: ", this.state.phoneNumber)
                     }} 
                     style = {genInfoDisclosureStyles.buttonContainer}>
-                        <Text style = {genInfoDisclosureStyles.buttonText}>Let's get started</Text>
+                        <Text style = {genInfoDisclosureStyles.buttonText}>Let's go!</Text>
                 </TouchableOpacity>
             </LinearGradient>
         );
