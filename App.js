@@ -50,7 +50,7 @@ const AppSwitchNavigator = createStackNavigator(
     FinalResults: {screen: FinalResultsScreen, navigationOptions: {headerShown: false} },
   },
   {
-    initialRouteName: "LandingPage1",
+    initialRouteName: "LandingPage2",
     headerMode: "float"
   }
 )

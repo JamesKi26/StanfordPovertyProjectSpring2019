@@ -46,7 +46,22 @@ const finalResultStyles = StyleSheet.create({
         color: "#fff",
     },
 
-    
+    row: {
+        width: "95%",
+    },  
+
+    table: {
+        height: 500,
+        borderColor: "#fff",
+        borderWidth: 2,
+        
+    },
+    wrapper: {
+        flexDirection: "row",
+    },
+    tableTitle: {
+        flex: 1,
+    }
 })
 
 export { finalResultStyles }

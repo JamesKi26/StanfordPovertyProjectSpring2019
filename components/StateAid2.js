@@ -17,17 +17,9 @@ export default class StateAid2 extends Component{
                         ["Up to $2,462 for tuition and $547 supplies for technical programs"]],
             
              tableTitle :["A (3.0 GPA)", "B (2.0 GPA)", "C"],
-        
-        
-      
-     
         }
     }
     
-
-    
-
-
     renderStateResults(){
         if(this.state.dataMap.get("State-Income") == "a" || this.state.dataMap.get("State-Income") == "b"){
             return(
