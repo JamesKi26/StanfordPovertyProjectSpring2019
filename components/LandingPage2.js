@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { StyleSheet, Text, View, TouchableOpacity, Image, Animated } from "react-native";
 import { landingStyles } from "../stylesheets/Landing-Styles"
-
+import * as Progress from 'react-native-progress';
 
 export default class LandingPage2 extends Component{
     constructor(props){
@@ -43,6 +43,9 @@ export default class LandingPage2 extends Component{
                     style = {landingStyles.buttonContainer}>
                         <Text style = {landingStyles.buttonText}>Click here to find out how you can too</Text>
                 </TouchableOpacity> */}
+                <View style = {landingStyles.progressBarContainer}>
+                    <Progress.Bar progress={0} width = {300} height = {5} color = {"#003366"} borderWidth = {2} borderColor = {"#fff"} />
+                </View>
             </View>
         );
     }

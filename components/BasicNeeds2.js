@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { StyleSheet, Text, View, TouchableOpacity, Image, KeyboardAvoidingView, Picker, Alert, Linking } from "react-native";
 import { basicStyles } from "../stylesheets/BasicNeeds-Styles"
-
+import * as Progress from 'react-native-progress';
 export default class BasicNeeds2 extends Component{
     
     
@@ -50,7 +50,7 @@ export default class BasicNeeds2 extends Component{
                 return <Picker.Item key = {i} label = {s.toString()} value = {s}/>
             });
             return(
-                <View style = {basicStyles.gradientBackground}>
+                <View style = {basicStyles.background}>
                     <Text style = {basicStyles.title}>You may also qualify for help with food in college</Text>
                     <Text style = {basicStyles.subTitle}>Here are some more questions that can help us determine how much food assistance you could receive</Text>
                     <View style = {basicStyles.dropMenuContainer}>
@@ -90,7 +90,7 @@ export default class BasicNeeds2 extends Component{
     render(){
         
         return (
-            <LinearGradient colors = {["#EDDBFF","#8133D4"]} style = {basicStyles.gradientBackground} >
+            <View style = {basicStyles.background} >
                 
 
                 {this.renderResults()}
@@ -114,7 +114,10 @@ export default class BasicNeeds2 extends Component{
                     style = {basicStyles.buttonContainer}>
                         <Text style = {basicStyles.buttonText}>Next</Text>
                 </TouchableOpacity>
-            </LinearGradient>
+                <View style = {basicStyles.progressBarContainer}>
+                    <Progress.Bar progress={0.87} width = {300} height = {5} color = {"#003366"} borderWidth = {2} borderColor = {"#fff"} />
+                </View>
+            </View>
         );
     }
 }

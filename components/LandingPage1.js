@@ -35,7 +35,7 @@ export default class LandingPage1 extends Component{
     render(){
         let { fadeAnimTitle, fadeAnimSubTitle } = this.state;
         return (
-            <LinearGradient colors = {["#EDDBFF","#8133D4"]} style = {landingStyles.gradientBackground} >
+            <View style = {landingStyles.background} >
                 <Animated.View style = {{opacity: fadeAnimTitle}}>
                     <Text style = {landingStyles.title}>Worried about paying for it?</Text>
                 </Animated.View>
@@ -51,7 +51,7 @@ export default class LandingPage1 extends Component{
                         style = {landingStyles.buttonContainer}>
                             <Text style = {landingStyles.buttonText}>Click here to find out how you can too</Text>
                     </TouchableOpacity>
-            </LinearGradient>
+            </View>
         );
     }
 }

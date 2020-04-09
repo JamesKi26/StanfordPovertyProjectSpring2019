@@ -3,7 +3,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { StyleSheet, Text, View, TouchableOpacity, Image, KeyboardAvoidingView, Picker, Alert, Linking } from "react-native";
 import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
 import { finalResultStyles } from "../stylesheets/FinalResults-Styles"
-
+import * as Progress from 'react-native-progress';
 export default class FinalResults extends Component{
     
     
@@ -104,7 +104,7 @@ export default class FinalResults extends Component{
     render(){
         
         return (
-            <LinearGradient colors = {["#EDDBFF","#8133D4"]} style = {finalResultStyles.gradientBackground} >
+            <View style = {finalResultStyles.background} >
                 <Text style = {finalResultStyles.title}>Final Results</Text>
 
                 <Text style = {finalResultStyles.subTitle}>Here’s a breakdown of what you could receive:</Text>
@@ -130,7 +130,10 @@ export default class FinalResults extends Component{
                     style = {basicStyles.buttonContainer}>
                         <Text style = {basicStyles.buttonText}>Next</Text>
                 </TouchableOpacity> */}
-            </LinearGradient>
+                <View style = {finalResultStyles.progressBarContainer}>
+                    <Progress.Bar progress={1} width = {300} height = {5} color = {"#003366"} borderWidth = {2} borderColor = {"#fff"} />
+                </View>
+            </View>
         );
     }
 }

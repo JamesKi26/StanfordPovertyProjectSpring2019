@@ -42,11 +42,12 @@ const genInfoDisclosureStyles = StyleSheet.create({
         alignItems: "center",
         position: "absolute",
         bottom: 5,
-        shadowColor: '#000', 
-        shadowOffset: { height: 0.2, width: 0.2 }, 
-        shadowOpacity: 1, 
-        shadowRadius: 0.2, 
-        elevation: 1, 
+        backgroundColor: "#89cff0",
+        shadowColor: 'rgba(0, 0, 0, 0.1)',
+        shadowOpacity: 0.8,
+        elevation: 6,
+        shadowRadius: 25 ,
+        shadowOffset : { width: 1, height: 13},
     },
 
     buttonText: {
@@ -68,6 +69,10 @@ const genInfoDisclosureStyles = StyleSheet.create({
         marginVertical: 5,
         color: "#fff"
     },
+    progressBarContainer:{
+        position: "absolute",
+        bottom: 5,
+    }
 })
 
 export { genInfoDisclosureStyles }

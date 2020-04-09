@@ -1,10 +1,11 @@
 import { StyleSheet} from "react-native"
 
 const finalResultStyles = StyleSheet.create({
-    gradientBackground:{
+    background:{
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
+        backgroundColor: "#89cff0"
     },
 
     title: {
@@ -61,6 +62,10 @@ const finalResultStyles = StyleSheet.create({
     },
     tableTitle: {
         flex: 1,
+    },
+    progressBarContainer:{
+        position: "absolute",
+        bottom: 5,
     }
 })
 

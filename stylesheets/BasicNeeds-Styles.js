@@ -1,10 +1,11 @@
 import { StyleSheet} from "react-native"
 
 const basicStyles = StyleSheet.create({
-    gradientBackground:{
+    background:{
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
+        backgroundColor: "#89cff0"
     },
 
     title: {
@@ -27,7 +28,7 @@ const basicStyles = StyleSheet.create({
 
     moreInfoContainer: {
         width: 25,
-        margin: 10,
+        margin: 5,
         padding: 5,
         borderColor: "#fff",
         borderWidth: 2,
@@ -36,6 +37,12 @@ const basicStyles = StyleSheet.create({
         alignItems: "center",
         position: "absolute",
         right: -30,
+        backgroundColor: "#89cff0",
+        shadowColor: 'rgba(0, 0, 0, 0.1)',
+        shadowOpacity: 0.8,
+        elevation: 6,
+        shadowRadius: 25 ,
+        shadowOffset : { width: 1, height: 13},
     },
 
     questionContainer: {
@@ -54,6 +61,12 @@ const basicStyles = StyleSheet.create({
         borderRadius: 15,
         justifyContent: "center",
         alignItems: "center",
+        backgroundColor: "#89cff0",
+        shadowColor: 'rgba(0, 0, 0, 0.1)',
+        shadowOpacity: 0.8,
+        elevation: 6,
+        shadowRadius: 25 ,
+        shadowOffset : { width: 1, height: 13},
     },
 
     buttonOptionContainerSelect: {
@@ -66,6 +79,11 @@ const basicStyles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: "#add8e6",
+        shadowColor: 'rgba(0, 0, 0, 0.1)',
+        shadowOpacity: 0.8,
+        elevation: 6,
+        shadowRadius: 25 ,
+        shadowOffset : { width: 1, height: 13},
     },
 
     buttonContainer: {
@@ -79,6 +97,12 @@ const basicStyles = StyleSheet.create({
         alignItems: "center",
         position: "absolute",
         bottom: 5,
+        backgroundColor: "#89cff0",
+        shadowColor: 'rgba(0, 0, 0, 0.1)',
+        shadowOpacity: 0.8,
+        elevation: 6,
+        shadowRadius: 25 ,
+        shadowOffset : { width: 1, height: 13},
     },
 
     buttonText: {
@@ -89,11 +113,12 @@ const basicStyles = StyleSheet.create({
     linkText: {
         textAlign: "center",
         fontSize: 20,
-        color: "#add8e6",
+        color: "#003366",
         margin: 10,
-        borderColor: "#add8e6",
+        borderColor: "#003366",
         borderWidth: 2,
         borderRadius: 15,
+        padding: 10,
     },
 
     dropMenuContainer: {
@@ -113,7 +138,10 @@ const basicStyles = StyleSheet.create({
         color: "#fff",
         shadowOpacity: 0.5,
     },
-
+    progressBarContainer:{
+        position: "absolute",
+        bottom: 5,
+    }
 
 })
 

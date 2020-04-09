@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { StyleSheet, Text, View, TouchableOpacity, Modal, Image, Picker } from "react-native";
 import { federalStyles } from "../stylesheets/FederalAid-Styles"
-
+import * as Progress from 'react-native-progress';
 
 export default class FederalAid1 extends Component{
     constructor(props){
@@ -24,15 +24,8 @@ export default class FederalAid1 extends Component{
 
     render(){
         return (
-            <LinearGradient colors = {["#EDDBFF","#8133D4"]} style = {federalStyles.gradientBackground} >
+            <View style = {federalStyles.background} >
                 <Text style = {federalStyles.title}>Federal Aid</Text>
-
-                {/* <Text style = {federalStyles.subTitle}>The Pell Grant is the largest source of federal grant aid. 
-                The average Pell Grant is over $4,000! Most states also offer additional financial aid. 
-                We’ll get to that in a minute. 
-                First, let’s see how much money you could get through the Pell Grant.</Text>
-
-                <Text style = {federalStyles.additionalText}>$26,000 per year is about $500/week or $12.50/hour for full-time employees. $65,000 is about $1,250/week or $30/hour.</Text> */}
 
                 <Text style = {federalStyles.subTitle}>The average Pell Grant is over $4,000! Let's see how much you can get.</Text>
 
@@ -46,17 +39,6 @@ export default class FederalAid1 extends Component{
                         <Text style = {federalStyles.buttonText}>More Info</Text>
                 </TouchableOpacity>
                 
-                {/* <View style = {federalStyles.pickerContainer}>
-                    <Picker selectedValue = {this.state.income}
-                    style = {federalStyles.picker}
-                    onValueChange = {(itemValue, itemIndex) => 
-                    this.setState({income: itemValue})}>
-                        <Picker.Item label = "a. $26,000 or less" value = "$26,000 or less"/>
-                        <Picker.Item label = "b. $26,001 to $65,000" value = "$26,001 to $65,000"/>
-                        <Picker.Item label = "c. $65,000 or above" value = "$65,000 or above"/>
-                    </Picker>
-                </View> */}
-
                 <Modal
                     animationType="slide"
                     transparent={true}
@@ -111,7 +93,12 @@ export default class FederalAid1 extends Component{
                     style = {federalStyles.buttonContainer}>
                         <Text style = {federalStyles.buttonText}>Next</Text>
                 </TouchableOpacity>
-            </LinearGradient>
+
+
+                <View style = {federalStyles.progressBarContainer}>
+                    <Progress.Bar progress={0.40} width = {300} height = {5} color = {"#003366"} borderWidth = {2} borderColor = {"#fff"} />
+                </View>
+            </View>
         );
     }
 }

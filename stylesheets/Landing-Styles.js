@@ -75,6 +75,10 @@ const landingStyles = StyleSheet.create({
         fontSize: 16,
         color: "#fff",
         textAlign: "center",
+    },
+    progressBarContainer:{
+        position: "absolute",
+        bottom: 5,
     }
 })
 

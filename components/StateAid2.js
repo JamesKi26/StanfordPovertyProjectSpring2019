@@ -3,7 +3,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { StyleSheet, Text, View, TouchableOpacity, Image, KeyboardAvoidingView, Picker } from "react-native";
 import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
 import { stateStyles } from "../stylesheets/StateAid-Styles"
-
+import * as Progress from 'react-native-progress';
 export default class StateAid2 extends Component{
     
     
@@ -78,7 +78,7 @@ export default class StateAid2 extends Component{
     render(){
        
         return (
-            <LinearGradient colors = {["#EDDBFF","#8133D4"]} style = {stateStyles.gradientBackground} >
+            <View style = {stateStyles.background} >
                 <Text style = {stateStyles.title}>State Grants</Text>
 
                 {this.renderStateResults()}
@@ -89,7 +89,10 @@ export default class StateAid2 extends Component{
                     style = {stateStyles.buttonContainer}>
                         <Text style = {stateStyles.resultButtonText}>See what other money is out there</Text>
                 </TouchableOpacity>
-            </LinearGradient>
+                <View style = {stateStyles.progressBarContainer}>
+                    <Progress.Bar progress={0.70} width = {300} height = {5} color = {"#003366"} borderWidth = {2} borderColor = {"#fff"} />
+                </View>
+            </View>
         );
     }
 }

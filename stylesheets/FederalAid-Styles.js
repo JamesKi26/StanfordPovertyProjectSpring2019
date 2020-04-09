@@ -1,10 +1,11 @@
 import { StyleSheet} from "react-native"
 
 const federalStyles = StyleSheet.create({
-    gradientBackground:{
+    background:{
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
+        backgroundColor: "#89cff0"
     },
 
     title: {
@@ -24,11 +25,12 @@ const federalStyles = StyleSheet.create({
     linkText: {
         textAlign: "center",
         fontSize: 20,
-        color: "#add8e6",
+        color: "#003366",
         margin: 10,
-        borderColor: "#add8e6",
+        borderColor: "#003366",
         borderWidth: 2,
         borderRadius: 15,
+        padding: 10,
     },
 
     additionalText: {
@@ -48,10 +50,16 @@ const federalStyles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         height: 15,
+        backgroundColor: "#89cff0",
+        shadowColor: 'rgba(0, 0, 0, 0.1)',
+        shadowOpacity: 0.8,
+        elevation: 6,
+        shadowRadius: 25 ,
+        shadowOffset : { width: 1, height: 13},
     },
 
     buttonModalContainer: {
-        width: "20%",
+        width: "40%",
         margin: 5   ,
         padding: 20,
         borderColor: "#fff",
@@ -61,6 +69,12 @@ const federalStyles = StyleSheet.create({
         alignItems: "center",
         textAlign: "center",
         height: 15,
+        backgroundColor: "#89cff0",
+        shadowColor: 'rgba(0, 0, 0, 0.1)',
+        shadowOpacity: 0.8,
+        elevation: 6,
+        shadowRadius: 25 ,
+        shadowOffset : { width: 1, height: 13},
     },
 
     buttonContainer: {
@@ -74,6 +88,12 @@ const federalStyles = StyleSheet.create({
         alignItems: "center",
         position: "absolute",
         bottom: 5,
+        backgroundColor: "#89cff0",
+        shadowColor: 'rgba(0, 0, 0, 0.1)',
+        shadowOpacity: 0.8,
+        elevation: 6,
+        shadowRadius: 25 ,
+        shadowOffset : { width: 1, height: 13},
     },
 
     buttonOptionContainerSelect: {
@@ -88,6 +108,11 @@ const federalStyles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         height: 15,
+        shadowColor: 'rgba(0, 0, 0, 0.1)',
+        shadowOpacity: 0.8,
+        elevation: 6,
+        shadowRadius: 25 ,
+        shadowOffset : { width: 1, height: 13},
     },
 
     buttonText: {
@@ -141,6 +166,10 @@ const federalStyles = StyleSheet.create({
         color: "#fff",
         margin: 5,
     },
+    progressBarContainer:{
+        position: "absolute",
+        bottom: 5,
+    }
 })
 
 export { federalStyles }

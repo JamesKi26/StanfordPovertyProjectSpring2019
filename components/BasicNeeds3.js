@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { StyleSheet, Text, View, TouchableOpacity, Image, KeyboardAvoidingView, Picker, Alert, Linking } from "react-native";
 import { basicStyles } from "../stylesheets/BasicNeeds-Styles"
-
+import * as Progress from 'react-native-progress';
 export default class BasicNeeds3 extends Component{
     
     
@@ -49,7 +49,7 @@ export default class BasicNeeds3 extends Component{
     render(){
         
         return (
-            <LinearGradient colors = {["#EDDBFF","#8133D4"]} style = {basicStyles.gradientBackground} >
+            <View style = {basicStyles.background} >
                 <Text style = {basicStyles.title}>Basic Needs</Text>
 
                 {this.renderResults()} 
@@ -61,7 +61,10 @@ export default class BasicNeeds3 extends Component{
                     style = {basicStyles.buttonContainer}>
                         <Text style = {basicStyles.buttonText}>Next</Text>
                 </TouchableOpacity>
-            </LinearGradient>
+                <View style = {basicStyles.progressBarContainer}>
+                    <Progress.Bar progress={0.95} width = {300} height = {5} color = {"#003366"} borderWidth = {2} borderColor = {"#fff"} />
+                </View>
+            </View>
         );
     }
 }

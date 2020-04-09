@@ -1,10 +1,11 @@
 import { StyleSheet} from "react-native"
 
 const stateStyles = StyleSheet.create({
-    gradientBackground:{
+    background:{
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
+        backgroundColor: "#89cff0"
     },
 
     keyboard:{
@@ -40,6 +41,7 @@ const stateStyles = StyleSheet.create({
         fontSize: 15,
         color: "#fff",
         margin: 5,
+        padding: 5,
     },
 
     resultTitle: {
@@ -89,6 +91,12 @@ const stateStyles = StyleSheet.create({
         alignItems: "center",
         position: "absolute",
         bottom: 5,
+        backgroundColor: "#89cff0",
+        shadowColor: 'rgba(0, 0, 0, 0.1)',
+        shadowOpacity: 0.8,
+        elevation: 6,
+        shadowRadius: 25 ,
+        shadowOffset : { width: 1, height: 13},
     },
 
     optionButtonContainer: {
@@ -100,6 +108,12 @@ const stateStyles = StyleSheet.create({
         borderRadius: 15,
         justifyContent: "center",
         alignItems: "center",
+        backgroundColor: "#89cff0",
+        shadowColor: 'rgba(0, 0, 0, 0.1)',
+        shadowOpacity: 0.8,
+        elevation: 6,
+        shadowRadius: 25 ,
+        shadowOffset : { width: 1, height: 13},
     },
 
     buttonOptionContainerSelect: {
@@ -112,6 +126,11 @@ const stateStyles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: "#add8e6",
+        shadowColor: 'rgba(0, 0, 0, 0.1)',
+        shadowOpacity: 0.8,
+        elevation: 6,
+        shadowRadius: 25 ,
+        shadowOffset : { width: 1, height: 13},
     },
 
     buttonText: {
@@ -139,6 +158,8 @@ const stateStyles = StyleSheet.create({
         fontSize: 16,
         color: "#fff",
         shadowOpacity: 0.5,
+        borderWidth: 2,
+        borderColor: "#fff",
     },
 
     
@@ -153,7 +174,16 @@ const stateStyles = StyleSheet.create({
     },
     tableTitle: {
         flex: 1,
+    },
+    pickerSelectedContainer:{
+        borderBottomColor: "#fff",
+        borderWidth: 2,
+    },
+    progressBarContainer:{
+        position: "absolute",
+        bottom: 5,
     }
+
 })
 
 export { stateStyles }

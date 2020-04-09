@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { StyleSheet, Text, View, TouchableOpacity, Image, KeyboardAvoidingView, Picker } from "react-native";
 import { stateStyles } from "../stylesheets/StateAid-Styles"
-
+import * as Progress from 'react-native-progress';
 export default class StateAid1 extends Component{
     
     
@@ -128,7 +128,7 @@ export default class StateAid1 extends Component{
             return <Picker.Item key = {i} label = {s} value = {i+2}/>
         });
         return (
-            <LinearGradient colors = {["#EDDBFF","#8133D4"]} style = {stateStyles.gradientBackground} >
+            <View style = {stateStyles.background} >
                 {/* <Text style = {stateStyles.title}>State Aid</Text> */}
                 <Text style = {stateStyles.title}>State Grants</Text>
 
@@ -173,7 +173,11 @@ export default class StateAid1 extends Component{
                     style = {stateStyles.buttonContainer}>
                         <Text style = {stateStyles.buttonText}>Next</Text>
                 </TouchableOpacity>
-            </LinearGradient>
+
+                <View style = {stateStyles.progressBarContainer}>
+                    <Progress.Bar progress={0.6} width = {300} height = {5} color = {"#003366"} borderWidth = {2} borderColor = {"#fff"} />
+                </View>
+            </View>
         );
     }
 }

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput, KeyboardAvoidingView } from "react-native";
 import { genInfoDisclosureStyles } from "../stylesheets/GenInfoDisclosure-Styles"
-
+import * as Progress from 'react-native-progress';
 
 export default class GenInfoDisclosure extends Component{
     constructor(props){
@@ -48,6 +48,10 @@ export default class GenInfoDisclosure extends Component{
                     style = {genInfoDisclosureStyles.buttonContainer}>
                         <Text style = {genInfoDisclosureStyles.buttonText}>Let's go!</Text>
                 </TouchableOpacity>
+
+                <View style = {genInfoDisclosureStyles.progressBarContainer}>
+                    <Progress.Bar progress={0.20} width = {300} height = {5} color = {"#003366"} borderWidth = {2} borderColor = {"#fff"} />
+                </View>
             </View>
         );
     }

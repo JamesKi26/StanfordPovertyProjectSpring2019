@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { StyleSheet, Text, View, TouchableOpacity, Image, Linking } from "react-native";
 import { federalStyles } from "../stylesheets/FederalAid-Styles"
-
+import * as Progress from 'react-native-progress';
 
 export default class FederalAid2 extends Component{
     constructor(props){
@@ -55,7 +55,7 @@ export default class FederalAid2 extends Component{
 
     render(){
         return (
-            <LinearGradient colors = {["#EDDBFF","#8133D4"]} style = {federalStyles.gradientBackground} >
+            <View style = {federalStyles.background} >
                 {/* <Text style = {financial}>{this.state.federalAidResultText}</Text> */}
                 <Text style = {federalStyles.title}>Federal Aid</Text>
                 {this.setResultText()}
@@ -66,7 +66,11 @@ export default class FederalAid2 extends Component{
                     style = {federalStyles.buttonContainer}>
                         <Text style = {federalStyles.buttonText}>Click here to see what else you can get</Text>
                 </TouchableOpacity>
-            </LinearGradient>
+
+                <View style = {federalStyles.progressBarContainer}>
+                    <Progress.Bar progress={0.50} width = {300} height = {5} color = {"#003366"} borderWidth = {2} borderColor = {"#fff"} />
+                </View>
+            </View>
         );
     }
 }
