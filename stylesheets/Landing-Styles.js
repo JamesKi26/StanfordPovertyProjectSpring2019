@@ -41,6 +41,12 @@ const landingStyles = StyleSheet.create({
         borderRadius: 15,
         justifyContent: "center",
         alignItems: "center",
+        backgroundColor: "#89cff0",
+        shadowColor: 'rgba(0, 0, 0, 0.1)',
+        shadowOpacity: 0.8,
+        elevation: 6,
+        shadowRadius: 25 ,
+        shadowOffset : { width: 1, height: 13},
 
     },
 
@@ -55,6 +61,13 @@ const landingStyles = StyleSheet.create({
         alignItems: "center",
         position: "absolute",
         bottom: 5,
+        shadowColor: 'black',
+        backgroundColor: "#89cff0",
+        shadowColor: 'rgba(0, 0, 0, 0.1)',
+        shadowOpacity: 0.8,
+        elevation: 6,
+        shadowRadius: 25 ,
+        shadowOffset : { width: 1, height: 13},
     },
 
     buttonText: {

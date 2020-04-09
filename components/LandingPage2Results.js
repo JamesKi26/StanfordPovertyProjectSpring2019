@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, View, TouchableOpacit, Button } from "react-native";
+import { Text, View, TouchableOpacity, Button } from "react-native";
 import { landingStyles } from "../stylesheets/Landing-Styles"
 
 
@@ -33,11 +33,11 @@ export default class LandingPage2Results extends Component{
                 {/* <Text style = {{opacity: this.state.op, fontSize: 20,
                 color: "#fff"}}>Hello</Text> */}
 
-                <Button onPress = {() => {
+                <TouchableOpacity onPress = {() => {
                     this.props.navigation.navigate("GenInfoDisclosure")}} 
                     style = {landingStyles.buttonContainer}>
                         <Text style = {landingStyles.buttonText}>Click here to find out how you can too</Text>
-                </Button>
+                </TouchableOpacity>
             </View>
         );
     }
