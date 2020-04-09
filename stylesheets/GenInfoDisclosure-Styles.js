@@ -1,10 +1,11 @@
 import { StyleSheet} from "react-native"
 
 const genInfoDisclosureStyles = StyleSheet.create({
-    gradientBackground:{
+    background:{
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
+        backgroundColor: "#89cff0"
     },
 
     keyboard:{
@@ -27,6 +28,7 @@ const genInfoDisclosureStyles = StyleSheet.create({
         fontSize: 20,
         color: "#fff",
         margin: 10,
+        paddingTop: 30,
     },
 
     buttonContainer: {
@@ -40,6 +42,11 @@ const genInfoDisclosureStyles = StyleSheet.create({
         alignItems: "center",
         position: "absolute",
         bottom: 5,
+        shadowColor: '#000', 
+        shadowOffset: { height: 0.2, width: 0.2 }, 
+        shadowOpacity: 1, 
+        shadowRadius: 0.2, 
+        elevation: 1, 
     },
 
     buttonText: {

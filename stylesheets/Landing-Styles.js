@@ -1,11 +1,14 @@
 import { StyleSheet} from "react-native"
 
 const landingStyles = StyleSheet.create({
-    gradientBackground:{
+    background:{
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
+        backgroundColor: "#89cff0"
     },
+
+
 
     title: {
         textAlign: "center",
@@ -21,8 +24,16 @@ const landingStyles = StyleSheet.create({
         margin: 10,
     },
 
+    optionButtonText: {
+        width: "80%",
+        fontSize: 40,
+        color: "#fff",
+        textAlign: "center",
+    },
+
     optionButtonContainer: {
         width: "50%",
+        height: "15%",
         margin: 5,
         padding: 10,
         borderColor: "#fff",

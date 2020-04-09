@@ -15,8 +15,8 @@ export default class GenInfoDisclosure extends Component{
 
     render(){
         return (
-            <LinearGradient colors = {["#EDDBFF","#8133D4"]} style = {genInfoDisclosureStyles.gradientBackground}>
-                <Text style = {genInfoDisclosureStyles.title}>General Information and Disclosure</Text>
+            <View style = {genInfoDisclosureStyles.background}>
+                {/* <Text style = {genInfoDisclosureStyles.title}>General Information and Disclosure</Text> */}
                 <KeyboardAvoidingView style={genInfoDisclosureStyles.keyboard} behavior="padding" enabled>
                     <Text style = {genInfoDisclosureStyles.subTitle}>There are $246 billion in federal aid available for students every year. 
                     And 85% of college students receive some type of financial aid.
@@ -40,6 +40,7 @@ export default class GenInfoDisclosure extends Component{
                     maxLength={12}
                     onChangeText = {(numb) => this.setState({phoneNumber: numb})}/>
                 </KeyboardAvoidingView>
+          
                 <TouchableOpacity onPress = {() => {
                     this.props.navigation.navigate("FederalAid1")
                     //console.log("email address: ", this.state.emailAddress, "\nphone number: ", this.state.phoneNumber)
@@ -47,7 +48,7 @@ export default class GenInfoDisclosure extends Component{
                     style = {genInfoDisclosureStyles.buttonContainer}>
                         <Text style = {genInfoDisclosureStyles.buttonText}>Let's go!</Text>
                 </TouchableOpacity>
-            </LinearGradient>
+            </View>
         );
     }
 }
