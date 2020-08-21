@@ -18,6 +18,8 @@ import BasicNeeds2Screen from "./components/BasicNeeds2";
 import BasicNeeds3Screen from "./components/BasicNeeds3";
 import FinalResultsScreen from "./components/FinalResults";
 
+import FamilialIncomeScreen from "./components/FamilialIncome";
+
 
 class App extends Component{
   constructor(props){
@@ -35,6 +37,8 @@ export default App
 
 const AppSwitchNavigator = createStackNavigator(
   {
+    //FamilialIncome: {screen: FamilialIncomeScreen, navigationOptions: {headerShown: false} },
+    
     LandingPage1: {screen: LandingPage1Screen, navigationOptions: {headerShown: false} },
     LandingPage2: {screen: LandingPage2Screen, navigationOptions: {headerShown: false} },
     LandingPage2ResultsScreen: {screen: LandingPage2ResultScreen, navigationOptions: {headerShown: false}},
@@ -54,7 +58,8 @@ const AppSwitchNavigator = createStackNavigator(
     FinalResults: {screen: FinalResultsScreen, navigationOptions: {headerShown: false} },
   },
   {
-    initialRouteName: "LandingPage2",
+    //initialRouteName: "LandingPage2",
+    initialRouteParams: "LandingPage2Screen",
     headerMode: "float"
   }
 )
